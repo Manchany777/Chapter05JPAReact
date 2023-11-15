@@ -70,6 +70,7 @@ const UploadForm = () => {
         // }
         Object.values(files).map((item, index) => {
             formData.append('img',item)
+            return null;
         })
 
         axios.post('/user/upload', formData, {  // upload란 이름으로 서버에 요청을 보냄
