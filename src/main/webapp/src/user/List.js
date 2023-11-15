@@ -53,7 +53,7 @@ const List = () => {
             })
             .catch(error => console.log(error))
             
-    }, [currentPage, searchList])
+    }, [currentPage, searchList, columnName, keyword])
 
     const onSearchList = (e) => {
         e.preventDefault()

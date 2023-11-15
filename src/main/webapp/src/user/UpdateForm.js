@@ -26,7 +26,7 @@ const UpdateForm = () => {
         axios.get(`/user/getUser?id=${userId}`)
             .then(res => setUserDTO(res.data))
             .catch(error => console.log(error))
-    }, [reset])
+    }, [reset, userId])
 
     const navigate = useNavigate()
 
@@ -134,7 +134,7 @@ const UpdateForm = () => {
                         <tr>
                             <th>아이디 입력 : </th>
                             <td>
-                                <input type="text" name="id" size="12" value={ userId } readOnly />
+                                <input type="text" name="id" size="12" value={ id } readOnly />
                             </td>
                         </tr>
                         <tr>

@@ -18,7 +18,7 @@ const UploadForm = () => {
         imageOriginalName: ''
     })
 
-    const {imageName, imageContent, imageFileName, imageOriginalName} = userUploadDTO
+    const {imageName, imageContent} = userUploadDTO
 
     const [imageList,setImageList]  = useState([]) // 이미지 미리보기 용도
     const [files,setFiles]  = useState('') // 이미지 서버로 전송
@@ -48,6 +48,9 @@ const UploadForm = () => {
         imgFiles.map(item => {  // 여기서 꺼낸 파일들을 imageList 담아야, imageList 담긴걸 아래에서 꺼내서 쓸 수가 있다.
             const objectURL = URL.createObjectURL(item)
             imgArray.push(objectURL) // objectURL를 임시변수 imgArray에 차곡차곡 쌓기
+
+            //map 함수는
+            return null;
         }) 
 
         setImageList(imgArray) // (미리보기용) 쌓아놓은 이미지 내용을, setImageList에 담기
@@ -135,7 +138,7 @@ const UploadForm = () => {
                                 {/*  미리보기 : 업로드 버튼을 누르기 전에 선택한 이미지가 맞는지 확인하기 위해서 이미지를 보여준다. */}
                                 <span id="showImgList">
                                     {
-                                        imageList.map((item, index) => <img key={ index } src={ item } style={{ width: '100px', height: '100px' }} />)
+                                        imageList.map((item, index) => <img key={ index } src={ item } style={{ width: '100px', height: '100px' }}  alt=''/>)
                                     }
                                 </span>
                                 
